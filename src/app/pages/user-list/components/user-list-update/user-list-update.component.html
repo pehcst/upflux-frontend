@@ -1,0 +1,59 @@
+<nz-modal
+  [(nzVisible)]="isVisible"
+  [nzTitle]="'Editar Usuário'"
+  (nzOnCancel)="handleCancel()"
+  (nzOnOk)="handleUpdate()"
+  [nzOkLoading]="isLoading"
+  data-test="edit-user-modal"
+>
+  <ng-container *nzModalContent>
+    <form
+      nz-form
+      [formGroup]="editForm"
+      nzLayout="horizontal"
+      data-test="edit-user-form"
+    >
+      <nz-form-item>
+        <nz-form-label [nzSpan]="5" nzFor="first_name" nzRequired>
+          Nome
+        </nz-form-label>
+        <nz-form-control>
+          <input
+            nz-input
+            formControlName="first_name"
+            id="first_name"
+            data-test="input-first-name"
+          />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label [nzSpan]="5" nzFor="last_name" nzRequired>
+          Sobrenome
+        </nz-form-label>
+        <nz-form-control>
+          <input
+            nz-input
+            formControlName="last_name"
+            id="last_name"
+            data-test="input-last-name"
+          />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label [nzSpan]="5" nzFor="email" nzRequired>
+          E-mail
+        </nz-form-label>
+        <nz-form-control>
+          <input
+            nz-input
+            formControlName="email"
+            id="email"
+            data-test="input-email"
+          />
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </ng-container>
+</nz-modal>

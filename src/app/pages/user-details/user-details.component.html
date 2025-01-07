@@ -1,0 +1,26 @@
+<nz-card
+  [nzBordered]="true"
+  [nzTitle]="'Detalhes do Usuário'"
+  style="width: 300px; margin: auto"
+  data-test="user-details-card"
+>
+  <img
+    [src]="user.avatar"
+    alt="Avatar"
+    style="width: 100%; margin-bottom: 10px"
+    data-test="user-avatar"
+  />
+  <p data-test="user-id"><strong>ID:</strong> {{ user.id }}</p>
+  <p data-test="user-name">
+    <strong>Nome:</strong> {{ user.first_name }} {{ user.last_name }}
+  </p>
+  <p data-test="user-email"><strong>Email:</strong> {{ user.email }}</p>
+  <button
+    nz-button
+    nzType="primary"
+    (click)="goBack()"
+    data-test="go-back-button"
+  >
+    Voltar
+  </button>
+</nz-card>

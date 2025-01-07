@@ -1,0 +1,17 @@
+<nz-modal
+  [(nzVisible)]="isVisible"
+  [nzTitle]="'Confirmar Exclusão'"
+  (nzOnCancel)="handleCancel()"
+  (nzOnOk)="handleDeleteUser()"
+  [nzOkLoading]="isLoading"
+  [nzOkDanger]="true"
+  data-test="delete-user-modal"
+>
+  <ng-container *nzModalContent>
+    <p data-test="delete-confirmation-message">
+      Tem certeza que deseja excluir o usuário
+      <strong data-test="delete-user-name">{{ user?.first_name }}</strong
+      >?
+    </p>
+  </ng-container>
+</nz-modal>
